@@ -11,7 +11,6 @@ class ClassList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height - 24 - 24 - 24 - 41,
       width: MediaQuery.of(context).size.width <= 1920
           ? (1920 - 24) / 24 * 7 - 24
           : (MediaQuery.sizeOf(context).width - 24) / 24 * 7 - 24,
@@ -20,9 +19,7 @@ class ClassList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRect(
-                clipBehavior: Clip.none,
-                child: SizedBox(
+            SizedBox(
                   //height: 41 + 12 +17 + 12,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,10 +31,11 @@ class ClassList extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 24),
-                        child: Text(
-                          '共 $classCount 个课程',
-                          style: KFont.tagCoutSytle,
-                        ),
+                        child:  Text(
+                            '共 $classCount 个课程',
+                            style: KFont.coutSytle,
+                          ),
+                       
                       ),
                       const SizedBox(
                         height: 16,
@@ -45,7 +43,7 @@ class ClassList extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
+              
               ClipPath(
                 clipper: RectangleClipper(),
                 child: SizedBox(
@@ -53,8 +51,6 @@ class ClassList extends StatelessWidget {
                       24 -
                       24 -
                       32 -
-                      41 -
-                      16 -
                       16 -
                       17 -
                       46,

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../Config/index.dart';
 import './Components/Nav/nav.dart';
 import './Components/class_list_class_page.dart';
-
+import './Components/tool_bar_class_page.dart';
+import './Components/lesson_store_class_page.dart';
 
 class ClassPage extends StatelessWidget {
   
@@ -37,6 +38,15 @@ class ClassPage extends StatelessWidget {
                     width: 24,
                   ),
                   ClassList(classCount: '12'),
+                  SizedBox(
+                    width: 24,
+                  ),
+                  ClassToolBar(),
+                  SizedBox(
+                    width: 24,
+                  ),
+                  LessonStore(currentPage: '0', maxPage: '125')
+
                 ],
               ),
             )),
