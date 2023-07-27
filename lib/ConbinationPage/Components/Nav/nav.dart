@@ -4,7 +4,6 @@ import '../../../Config/index.dart';
 import './select_sign.dart';
 import '../../../Route/application.dart';
 
-
 class Nav extends StatefulWidget {
   final int selectIndex;
   final String avatarUrl;
@@ -97,15 +96,14 @@ class _NavState extends State<Nav> {
   }
 
   void firstSelectOnClick() {
-    Application.router!.navigateTo(context, '/EditorPage', replace: true,transition: TransitionType.fadeIn);
+    Application.router!.navigateTo(context, '/EditorPage',replace: true,transition: TransitionType.fadeIn);
   }
 
   void secondSelectOnClick() {
-    //Application.router!.navigateTo(context, '/ClassPage',replace: true,transition: TransitionType.fadeIn);
+    Application.router!.navigateTo(context, '/ClassPage',replace: true,transition: TransitionType.fadeIn);
   }
 
   void thirdSelectOnClick(){
-    Application.router!.navigateTo(context, '/ConbinationPage',replace: true,transition: TransitionType.fadeIn);
+    //Application.router!.navigateTo(context, '/ClassConbinationPage',replace: true,transition: TransitionType.fadeIn);
   }
 }
-

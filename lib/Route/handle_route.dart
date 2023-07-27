@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 //----页面-----
 import '../EditorPage/editor_page.dart';
 import '../ClassPage/class_page.dart';
+import '../ConbinationPage/conbination_page.dart';
 
 //---
 Handler editorPageHandle = Handler(
@@ -14,4 +15,9 @@ Handler editorPageHandle = Handler(
 Handler classPageHandle = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   return ClassPage();
+});
+
+Handler conbinationPageHandle = Handler(
+    handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
+  return ConbinationPage();
 });

@@ -39,7 +39,7 @@ class TagList extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 24),
                         child: Text(
                           '共 $tagCount 个标签',
-                          style: KFont.tagCoutSytle,
+                          style: KFont.coutSytle,
                         ),
                       ),
                       const SizedBox(

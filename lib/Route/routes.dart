@@ -6,6 +6,7 @@ class Routes {
   static String root = '/';
   static String editorPage = '/EditorPage';
   static String classPage = '/ClassPage';
+  static String conbinationPage = '/ConbinationPage';
 
   //---------
   static void configureRotes(FluroRouter router) {
@@ -19,5 +20,6 @@ class Routes {
     router.define(root, handler: editorPageHandle);
     router.define(editorPage, handler: editorPageHandle);
     router.define(classPage, handler: classPageHandle);
+    router.define(conbinationPage, handler: conbinationPageHandle);
   }
 }

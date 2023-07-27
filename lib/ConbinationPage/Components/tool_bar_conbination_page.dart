@@ -1,47 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:learning_master_background/Config/index.dart';
-import './edit_tag_setting_tag_tab_page.dart';
-import './add_tag_setting_tag_tab_page.dart';
-import './delect_tag_setting_tag_tab_page.dart';
+import './class_list_conbination_page.dart';
+import './add_conbination_conbination_page.dart';
+import './edit_conbination_conbination_page.dart';
+import './delect_conbination_conbination_page.dart';
 
-class TagToolBar extends StatefulWidget {
-  final Function? firstClick;
-  final Function? secondClick;
-  final Function? thirdClick;
-  final Function? fourthClick;
-  final Function? fifthClick;
-
-  const TagToolBar({
+class ConbinationToolBar extends StatefulWidget {
+  const ConbinationToolBar({
     super.key,
-    required this.firstClick,
-    required this.secondClick,
-    required this.thirdClick,
-    required this.fourthClick,
-    required this.fifthClick,
   });
 
   @override
-  State<TagToolBar> createState() => _TagToolBarState();
+  State<ConbinationToolBar> createState() => _ConbinationToolBarState();
 }
 
-class _TagToolBarState extends State<TagToolBar> {
+class _ConbinationToolBarState extends State<ConbinationToolBar> {
   int? currentToolIndex;
 
-  //选定tag后设置当前tag
-  String? currentTagName;
-  String? currentTagId;
+  //选定class后设置当前class
+  String? currentClassName;
+  String? currentClassId;
+
+  //选定lesson后设置当前lesson
+
+  double? buttonWidth;
 
   @override
   void initState() {
     super.initState();
-    currentToolIndex = 1;
+    currentToolIndex = 5;
   }
 
   @override
   Widget build(BuildContext context) {
-
-      double buttonWidth = MediaQuery.of(context).size.width <= 1920
+    buttonWidth = MediaQuery.of(context).size.width <= 1920
         ? (((1920 - 24 - 24) -
                     ((1920 - 24) / 24 * 2) -
                     ((((1920 - 24) / 24) * 7) - 24) * 2) -
@@ -61,12 +54,14 @@ class _TagToolBarState extends State<TagToolBar> {
       width: MediaQuery.of(context).size.width <= 1920
           ? (1920 - 24) / 24 * 8 - 24
           : (MediaQuery.sizeOf(context).width - 24) / 24 * 8 - 24,
+      height: MediaQuery.of(context).size.height - 24 - 24,
       child: Column(
-          mainAxisSize: MainAxisSize.min,
+          //mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
+              height: 46,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
                   color: KColor.containerColor,
@@ -99,9 +94,9 @@ class _TagToolBarState extends State<TagToolBar> {
             const SizedBox(
               height: 16,
             ),
-            Wrap(spacing: 24, runSpacing: 16, children: [
+            Wrap(spacing: 24, children: [
               InkWell(
-                onTap: widget.firstClick!(),
+                onTap: firstClick,
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   decoration: BoxDecoration(
@@ -122,7 +117,7 @@ class _TagToolBarState extends State<TagToolBar> {
                 ),
               ),
               InkWell(
-                onTap: widget.secondClick!(),
+                onTap: secondClick,
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   decoration: BoxDecoration(
@@ -143,7 +138,7 @@ class _TagToolBarState extends State<TagToolBar> {
                 ),
               ),
               InkWell(
-                onTap: widget.thirdClick!(),
+                onTap: thirdClick,
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   decoration: BoxDecoration(
@@ -164,7 +159,7 @@ class _TagToolBarState extends State<TagToolBar> {
                 ),
               ),
               InkWell(
-                onTap: widget.fourthClick!(),
+                onTap: fourthClick,
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   decoration: BoxDecoration(
@@ -185,7 +180,7 @@ class _TagToolBarState extends State<TagToolBar> {
                 ),
               ),
               InkWell(
-                onTap: widget.fifthClick!(),
+                onTap: fifthClick,
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
                   decoration: BoxDecoration(
@@ -206,15 +201,27 @@ class _TagToolBarState extends State<TagToolBar> {
                 ),
               ),
             ]),
-            const SizedBox(height: 32,),
-            currentToolIndex == 1 ? 
-                EditTag(tagName: '1234',) : 
-            currentToolIndex == 2 ?
-                AddTag():
-            currentToolIndex == 5 ?
-                DelectTag(tagName: 'c++'):
-                SizedBox()
+            const SizedBox(
+              height: 32,
+            ),
+            currentToolIndex == 0
+                ?  ToolClassList(classId: '123', className: '全栈技术开发',  
+                height: MediaQuery.of(context).size.height - 24 - 24 - buttonWidth! - 32 - 16 -46 )
+                : currentToolIndex == 1
+                    ? EditConbination(height: buttonWidth!, conbinationId: 'asd123', conbinationTitle: 'conbinationTitle', difficultyLevel: 'difficultyLevel', lengthLevel: 'lengthLevel', usabilityLevel: 'usabilityLevel', conbinationProfile: 'conbinationProfile')
+                    : currentToolIndex == 2
+                    ? AddConbination(height: buttonWidth!, conbinationId: '', conbinationTitle: '', difficultyLevel: '', lengthLevel: '', usabilityLevel: '', conbinationProfile: '')
+                    : currentToolIndex == 5
+                    ? DelectConbination(conbinationId: '321', conbinationName: '全栈技术开发',)
+                    : SizedBox()
           ]),
     );
   }
+
+  Function()? firstClick() {}
+
+  Function()? secondClick() {}
+  Function()? thirdClick() {}
+  Function()? fourthClick() {}
+  Function()? fifthClick() {}
 }

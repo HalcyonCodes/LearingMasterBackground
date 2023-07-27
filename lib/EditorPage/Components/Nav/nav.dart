@@ -4,6 +4,7 @@ import '../../../Config/index.dart';
 import './select_sign.dart';
 import '../../../Route/application.dart';
 
+
 class Nav extends StatefulWidget {
   final int selectIndex;
   final String avatarUrl;
@@ -80,6 +81,14 @@ class _NavState extends State<Nav> {
                 iconPath: 'Svg/github.svg',
                 onClick: secondSelectOnClick,
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              SelectSign(
+                isSelect: widget.selectIndex == 2 ? true : false,
+                iconPath: 'Svg/github.svg',
+                onClick: thirdSelectOnClick,
+              ),
             ],
           ),
         ),
@@ -93,5 +102,9 @@ class _NavState extends State<Nav> {
 
   void secondSelectOnClick() {
     Application.router!.navigateTo(context, '/ClassPage',replace: true,transition: TransitionType.fadeIn);
+  }
+
+  void thirdSelectOnClick(){
+    Application.router!.navigateTo(context, '/ConbinationPage',replace: true,transition: TransitionType.fadeIn);
   }
 }

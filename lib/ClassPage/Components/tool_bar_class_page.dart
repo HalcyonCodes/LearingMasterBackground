@@ -31,7 +31,7 @@ class _ClassToolBarState extends State<ClassToolBar> {
   @override
   void initState() {
     super.initState();
-    currentToolIndex = 5;
+    currentToolIndex = 0;
   }
 
   @override

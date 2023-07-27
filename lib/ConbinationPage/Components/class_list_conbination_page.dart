@@ -1,100 +1,84 @@
 import 'package:flutter/material.dart';
 import '../../Config/index.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:double_bladed_axe/double_bladed_axe.dart';
-import './lesson_card_class_page.dart';
+import './class_card_conbination_page.dart';
 
-class LessonList extends StatefulWidget {
+class ToolClassList extends StatefulWidget {
   final String className;
   final String classId;
-  final String maxPage;
-  final String currentPage;
   final double height;
 
-  const LessonList(
+  const ToolClassList(
       {super.key,
       required this.classId,
       required this.className,
-      required this.currentPage,
-      required this.maxPage,required this.height});
+      required this.height});
 
   @override
-  State<LessonList> createState() => _LessonListState();
+  State<ToolClassList> createState() => _ToolClassLisState();
 }
 
-class _LessonListState extends State<LessonList> {
+class _ToolClassLisState extends State<ToolClassList> {
   String? className;
   String? classId;
-  String? maxPage;
-  String? currentPage;
-
-  ListUtil? listUtil;
 
   @override
   void initState() {
     super.initState();
     classId = widget.classId;
     className = widget.className;
-    maxPage = widget.maxPage;
-    currentPage = widget.currentPage;
-    listUtil = ListUtil();
   }
 
-  List<LessonCard> initLessonCard = [
-    LessonCard(
+  List<ClassCard> initLessonCard = [
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
+        classStatus: '新建文件夹',
+        onClick: () {}),
+    ClassCard(
+        classId: '123',
+        lastUpdateTime: '2023/7/27',
+        classCount: '13',
         className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
-        className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
-    LessonCard(
-        className: 'C++',
-        lessonId: 'A001',
-        lessonTitle: 'C++学习前言',
-        lessonProfile: '学习c++之前需要知道的事项',
-        lessonTags: ['C++', '入门']),
+        classStatus: '新建文件夹',
+        onClick: () {})
   ];
 
   @override
@@ -142,7 +126,7 @@ class _LessonListState extends State<LessonList> {
                 ],
               ),
             ),
-          ),        
+          ),
           const SizedBox(
             height: 16,
           ),
@@ -153,7 +137,7 @@ class _LessonListState extends State<LessonList> {
                       behavior: ScrollConfiguration.of(context)
                           .copyWith(scrollbars: false),
                       child: SizedBox(
-                        height: widget.height - 16  - 46,
+                        height: widget.height  - 46 - 16,
                         child: ListView(
                           clipBehavior: Clip.none,
                           children: initLessonCard,
@@ -167,6 +151,8 @@ class _LessonListState extends State<LessonList> {
 
 //通过裁剪遮住滚动项目越界
 class RectangleClipper extends CustomClipper<Path> {
+
+
   @override
   Path getClip(Size size) {
     final path = Path();

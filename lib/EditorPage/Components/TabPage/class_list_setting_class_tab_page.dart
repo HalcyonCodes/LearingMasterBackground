@@ -36,7 +36,7 @@ class ClassList extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 24),
                         child: Text(
                           '共 $classCount 个课程',
-                          style: KFont.tagCoutSytle,
+                          style: KFont.coutSytle,
                         ),
                       ),
                       const SizedBox(

@@ -41,6 +41,22 @@ class _ClassToolBarState extends State<ClassToolBar> {
 
   @override
   Widget build(BuildContext context) {
+
+      double buttonWidth = MediaQuery.of(context).size.width <= 1920
+        ? (((1920 - 24 - 24) -
+                    ((1920 - 24) / 24 * 2) -
+                    ((((1920 - 24) / 24) * 7) - 24) * 2) -
+                (24 * 4) -
+                24 * 2) /
+            5
+        : (((MediaQuery.of(context).size.width - 24 - 24) -
+                    ((MediaQuery.of(context).size.width - 24) / 24 * 2) -
+                    ((((MediaQuery.of(context).size.width - 24) / 24) * 7) -
+                            24) *
+                        2) -
+                (24 * 4) -
+                24 * 2) /
+            5;
     return SizedBox(
       //height: MediaQuery.sizeOf(context).height - 24 - 24 - 24 - 41,
       width: MediaQuery.of(context).size.width <= 1920
@@ -95,12 +111,8 @@ class _ClassToolBarState extends State<ClassToolBar> {
                     boxShadow: [KShadow.shadow],
                   ),
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
-                  width: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
+                  height: buttonWidth,
+                  width: buttonWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: SvgPicture.asset(
@@ -120,12 +132,8 @@ class _ClassToolBarState extends State<ClassToolBar> {
                     boxShadow: [KShadow.shadow],
                   ),
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
-                  width: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
+                  height: buttonWidth,
+                  width: buttonWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: SvgPicture.asset(
@@ -145,12 +153,8 @@ class _ClassToolBarState extends State<ClassToolBar> {
                     boxShadow: [KShadow.shadow],
                   ),
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
-                  width: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
+                  height: buttonWidth,
+                  width: buttonWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: SvgPicture.asset(
@@ -170,12 +174,8 @@ class _ClassToolBarState extends State<ClassToolBar> {
                     boxShadow: [KShadow.shadow],
                   ),
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
-                  width: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
+                  height: buttonWidth,
+                  width: buttonWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: SvgPicture.asset(
@@ -195,12 +195,8 @@ class _ClassToolBarState extends State<ClassToolBar> {
                     boxShadow: [KShadow.shadow],
                   ),
                   alignment: Alignment.center,
-                  height: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
-                  width: MediaQuery.of(context).size.width <= 1920
-                      ? (1920 - 24) / 24 * 2 - 24
-                      : (MediaQuery.sizeOf(context).width - 24) / 24 * 2 - 24,
+                  height: buttonWidth,
+                  width: buttonWidth,
                   child: Padding(
                     padding: const EdgeInsets.all(24),
                     child: SvgPicture.asset(

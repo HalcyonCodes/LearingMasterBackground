@@ -53,7 +53,7 @@ class KFont {
   );
 
   //editorPage->settingTag->tagList 标签数量字体
-  static TextStyle tagCoutSytle = const TextStyle(
+  static TextStyle coutSytle = const TextStyle(
     fontFamily: 'MiSans',
     fontSize: 13,
     color: Colors.black,
@@ -139,4 +139,33 @@ class KFont {
     height: 25 / 13,
   );
   
+  //classPage->ClassToolBar->lessonCard->lessonTag 中标签字体
+  static TextStyle lessonTagStyle = const TextStyle(
+    fontFamily: 'MiSans',
+    fontSize: 13,
+    color: Colors.white,
+    fontWeight: FontWeight.w600,
+    decoration: TextDecoration.none,
+    height: 16 / 13,
+  );
+
+  //课程组合卡片中卡片头的字体
+  static TextStyle profileInConbinatinClassCardStyle = TextStyle(
+    fontFamily: 'MiSans',
+    fontSize: 13,
+    color: KColor.greyTextColor,
+    fontWeight: FontWeight.w600,
+    decoration: TextDecoration.none,
+    height: 17 / 13,
+  );
+
+  //课程组合卡片中课程难度等级的字体
+  static TextStyle levelInConbinationClassCardStyle = TextStyle(
+    fontFamily: 'Misans',
+    fontSize: 16,
+    color: KColor.primaryColor,
+    fontWeight: FontWeight.w700,
+    decoration: TextDecoration.none,
+    height: 16 / 16,
+  );
 }
